@@ -37,7 +37,7 @@ Currently includes:
 * **Database Info:** Locate where the database connection is established in the code (sql.py page) and update the connection details (e.g., host, database name, user, password) for your PostgreSQL database.
 * **Data Table Info:** Locate where the data table information (column names types and descriptions) is stated in the code (sql.py page) system prompt and update for your PostgreSQL table.
 
-**Warning:** This method of handling sensitive information is not secure and is intended for development or testing purposes only. For production environments, consider using environment variables or a secure configuration management system.
+**Warning:** This method of handling sensitive information like API keys is not secure. Plz be careful :)
 
 ### Running the Application
 
