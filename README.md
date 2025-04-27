@@ -31,10 +31,10 @@ Currently includes:
 
 ### Configuration
 
-**Note:** Currently, the API key and database connection information are handled directly within the Python code (`app.py` or related files) and are not secured. Users will need to modify the code directly to set these parameters.
+**Note:** Currently, the API key and database connection information are handled directly within the Python code (`app.py` and the 3 pages) and are not secured. Users will need to modify the code directly to set these parameters.
 
-* **API Key:** Locate where the API key is used in the code and replace the placeholder with your actual API key.
-* **Database Info:** Locate where the database connection is established in the code and update the connection details (e.g., host, database name, user, password) for your PostgreSQL database.
+* **API Key:** Locate where the API key is used in the code (all 3 pages) and replace the placeholder with your actual API key.
+* **Database Info:** Locate where the database connection is established in the code (sql.py page) and update the connection details (e.g., host, database name, user, password) for your PostgreSQL database.
 
 **Warning:** This method of handling sensitive information is not secure and is intended for development or testing purposes only. For production environments, consider using environment variables or a secure configuration management system.
 
@@ -42,4 +42,34 @@ Currently includes:
 
 ```bash
 streamlit run app.py
+```
+
+### Workflow Overview
+
+```mermaid
+graph TD
+    A[Start: AI Data Assistant Hub] --> B(Sidebar Navigation)
+    B --> C{Select Tool}
+    C --> D[SQL Query Assistant]
+    C --> E[PDF Query Assistant WIP]
+    C --> F[Data Visualizer WIP]
+
+    D --> G{User Input: Natural Language Query}
+    G --> H[LLM: OpenAI or Ollama]
+    H --> I[Generate SQL Query]
+    I --> J[Execute SQL Query on PostgreSQL]
+    J --> K[Display Results]
+    J --> L[Summarize Query]
+    J --> M[Download Data Excel]
+    M --> F
+
+    E --> N{User Input: Upload PDF & Query}
+    N --> O[LLM: OpenAI or Ollama]
+    O --> P[Read PDF Content & Generate Answer]
+    P --> Q[Display Answer]
+
+    F --> R{User Input: Upload Data File}
+    R --> S[Select Columns & Chart Type]
+    S --> T[Create Visualization]
+    T --> U[Display Visualization]
 ```
