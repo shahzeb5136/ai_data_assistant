@@ -31,10 +31,11 @@ Currently includes:
 
 ### Configuration
 
-**Note:** Currently, the API key and database connection information are handled directly within the Python code (`app.py` and the 3 pages) and are not secured. Users will need to modify the code directly to set these parameters.
+**Note:** Currently, the API key and database connection and data table (column names types and descriptions) information are handled directly within the Python code (`app.py` and the 3 pages) and are not secured. Users will need to modify the code directly to set these parameters.
 
 * **API Key:** Locate where the API key is used in the code (all 3 pages) and replace the placeholder with your actual API key.
 * **Database Info:** Locate where the database connection is established in the code (sql.py page) and update the connection details (e.g., host, database name, user, password) for your PostgreSQL database.
+* **Data Table Info:** Locate where the data table information (column names types and descriptions) is stated in the code (sql.py page) system prompt and update for your PostgreSQL table.
 
 **Warning:** This method of handling sensitive information is not secure and is intended for development or testing purposes only. For production environments, consider using environment variables or a secure configuration management system.
 
